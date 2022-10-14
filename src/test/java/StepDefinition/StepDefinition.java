@@ -29,21 +29,23 @@ public class StepDefinition {
     public void user_is_on_the_data_table_page() {
     }
 
-    @When("User enters the details")
-    public void user_enters_the_details(io.cucumber.datatable.DataTable dataTable) throws InterruptedException {
+    @When("^User inserts the record (.+),(.+),(.+),(.+),(.+),(.+),(.+),(.+)$")
+    public void user_enters_the_details(String firstname, String lastname, String username, String password, String customer, String role, String email, String CellPhone) throws InterruptedException {
         //PageObjectManager pageObjectManager = new PageObjectManager(testContextSetup.driver);
 
         DataTablePage dataTablePage = testContextSetup.pageObjectManager.getDataTablePage();
 
         dataTablePage.addRecord();
-        dataTablePage.addFirstName();
-        dataTablePage.addLastName();
-        dataTablePage.addUsername();
-        dataTablePage.addPassword();
+        dataTablePage.addFirstName(firstname);
+        dataTablePage.addLastName(lastname);
+        dataTablePage.addUsername(username);
+        dataTablePage.addPassword(password);
         dataTablePage.selectCustomer();
         dataTablePage.selectRole();
-        dataTablePage.addEmail();
-        dataTablePage.addPhone();
+        dataTablePage.addEmail(email);
+        dataTablePage.addPhone(CellPhone);
+
+        Thread.sleep(10000);
         dataTablePage.saveUser();
 
     }

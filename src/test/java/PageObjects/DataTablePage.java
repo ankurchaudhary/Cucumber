@@ -48,20 +48,20 @@ public class DataTablePage {
         driver.findElement(addButton).click();
     }
 
-    public void addFirstName(){
-        driver.findElement(firstName).sendKeys("Ankur");
+    public void addFirstName(String firstNameKey){
+        driver.findElement(firstName).sendKeys(firstNameKey);
     }
 
-    public void addLastName(){
-        driver.findElement(lastName).sendKeys("Chaudhary");
+    public void addLastName(String lastNameKey){
+        driver.findElement(lastName).sendKeys(lastNameKey);
     }
 
-    public void addUsername(){
-        driver.findElement(userName).sendKeys("Teladoc2266");
+    public void addUsername(String userNameKey){
+        driver.findElement(userName).sendKeys(userNameKey);
     }
 
-    public void addPassword(){
-        driver.findElement(password).sendKeys("Password123");
+    public void addPassword(String passwordKey){
+        driver.findElement(password).sendKeys(passwordKey);
     }
 
     public void selectCustomer(){
@@ -73,12 +73,12 @@ public class DataTablePage {
         selectRole.selectByIndex(1);
     }
 
-    public void addEmail(){
-        driver.findElement(email).sendKeys("test@test.com");
+    public void addEmail(String emailKey){
+        driver.findElement(email).sendKeys(emailKey);
     }
 
-    public void addPhone(){
-        driver.findElement(phone).sendKeys("9991119999");
+    public void addPhone(String phoneKey){
+        driver.findElement(phone).sendKeys(phoneKey);
     }
 
     public void saveUser(){
