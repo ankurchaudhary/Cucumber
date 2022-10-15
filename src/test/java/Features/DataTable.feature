@@ -8,7 +8,7 @@ Feature: Insert & Delete record from the web table
 
     Examples:
     |FirstName|LastName|Username|Password|Customer|Role|EMail|Cell|
-    |Ankur|Chaudhary|Ankur2622|Password123|Company AAA|Sales Team|test@test.com|9991119999|
+    |Ankur|Chaudhary|Ankur2622|Password123|Company BBB|Admin|test@test.com|9991119999|
 
   @DeleteRecord
   Scenario: Validate the record is deleted from the table

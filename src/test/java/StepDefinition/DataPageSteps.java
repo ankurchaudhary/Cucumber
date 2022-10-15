@@ -31,19 +31,23 @@ public class DataPageSteps {
 
     @When("^User inserts the record (.+),(.+),(.+),(.+),(.+),(.+),(.+),(.+)$")
     public void user_enters_the_details(String firstname, String lastname, String username, String password, String customer, String role, String email, String CellPhone) throws InterruptedException {
-        //PageObjectManager pageObjectManager = new PageObjectManager(testContextSetup.driver);
 
         DataTablePage dataTablePage = testContextSetup.pageObjectManager.getDataTablePage();
 
         dataTablePage.addRecord();
+
         dataTablePage.addFirstName(firstname);
         dataTablePage.addLastName(lastname);
         dataTablePage.addUsername(username);
         dataTablePage.addPassword(password);
-        dataTablePage.selectCustomer();
-        dataTablePage.selectRole();
+
+        dataTablePage.selectCustomer(customer);
+        dataTablePage.selectRole(role);
+
         dataTablePage.addEmail(email);
         dataTablePage.addPhone(CellPhone);
+
+        Thread.sleep(5000);
 
         dataTablePage.saveUser();
 
