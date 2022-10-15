@@ -7,7 +7,6 @@ import java.io.IOException;
 
 public class TestContextSetup {
 
-    public WebDriver driver;
     public DriverSetup driverSetup;
     public PageObjectManager pageObjectManager;
 

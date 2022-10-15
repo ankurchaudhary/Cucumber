@@ -14,11 +14,11 @@ import java.util.List;
 // nth child
 //implicit wait and explicit wait
 
-public class StepDefinition {
+public class DataPageSteps {
 
     public TestContextSetup testContextSetup;
 
-    public StepDefinition(TestContextSetup testContextSetup){
+    public DataPageSteps(TestContextSetup testContextSetup){
         this.testContextSetup = testContextSetup;
     }
 
@@ -45,7 +45,6 @@ public class StepDefinition {
         dataTablePage.addEmail(email);
         dataTablePage.addPhone(CellPhone);
 
-        Thread.sleep(10000);
         dataTablePage.saveUser();
 
     }

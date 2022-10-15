@@ -1,5 +1,6 @@
 Feature: Insert & Delete record from the web table
 
+  @CreateRecord
   Scenario Outline: Validate a new record is create into the table
     Given User is on the DataTable Page
     When User inserts the record <FirstName>,<LastName>,<Username>,<Password>,<Customer>,<Role>,<EMail>,<Cell>
@@ -9,7 +10,7 @@ Feature: Insert & Delete record from the web table
     |FirstName|LastName|Username|Password|Customer|Role|EMail|Cell|
     |Ankur|Chaudhary|Ankur2622|Password123|Company AAA|Sales Team|test@test.com|9991119999|
 
-
+  @DeleteRecord
   Scenario: Validate the record is deleted from the table
     Given User is on the DataTable Page
     When User 'novak' is present in Table
