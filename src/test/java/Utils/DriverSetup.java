@@ -31,7 +31,6 @@ public class DriverSetup {
 
         String browser = browser_maven!=null ? browser_maven : browser_properties;
 
-        //create for Firefox
         if(driver == null){
             if(browser.equalsIgnoreCase("chrome")){
                 WebDriverManager.chromedriver().setup();

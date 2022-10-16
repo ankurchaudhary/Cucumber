@@ -15,7 +15,7 @@ public class DataTablePage {
         this.driver = driver;
     }
 
-    By addButton = By.xpath("//button[@type='ad']");
+    By addButton = By.xpath("//button[@type='add']");
 
     By firstName = By.xpath("//input[@name='FirstName']");
 
@@ -66,9 +66,11 @@ public class DataTablePage {
     }
 
     public void selectCustomer(String customerOption){
+
         if(customerOption.equals("Company AAA")) {
             driver.findElement(customer_1).click();
-        }if(customerOption.equals("Company BBB")){
+        }
+        if(customerOption.equals("Company BBB")){
             driver.findElement(customer_2).click();
         }
     }

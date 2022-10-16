@@ -5,14 +5,12 @@ import Utils.TestContextSetup;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import java.util.List;
-
-//Use different locators
-// nth child
-//implicit wait and explicit wait
 
 public class DataPageSteps {
 
@@ -23,7 +21,6 @@ public class DataPageSteps {
     }
 
     String username;
-
 
     @Given("User is on the DataTable Page")
     public void user_is_on_the_data_table_page() {
@@ -47,9 +44,8 @@ public class DataPageSteps {
         dataTablePage.addEmail(email);
         dataTablePage.addPhone(CellPhone);
 
-        Thread.sleep(5000);
-
         dataTablePage.saveUser();
+
 
     }
 
