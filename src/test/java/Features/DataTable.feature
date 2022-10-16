@@ -1,4 +1,4 @@
-Feature: Insert & Delete record from the web table
+Feature: Insert & Delete record from the Web table
 
   @CreateRecord
   Scenario Outline: Validate a new record is create into the table

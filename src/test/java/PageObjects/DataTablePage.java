@@ -15,7 +15,7 @@ public class DataTablePage {
         this.driver = driver;
     }
 
-    By addButton = By.xpath("//button[@type='add']");
+    By addButton = By.cssSelector("thead button[type='add']");
 
     By firstName = By.xpath("//input[@name='FirstName']");
 
@@ -38,7 +38,9 @@ public class DataTablePage {
 
     By record = By.xpath("//tbody/tr[1]/td[1]");
 
-    By delete = By.xpath("//tbody/tr[3]/td[11]/button[@class='btn btn-link']");
+    //By delete = By.xpath("//tbody/tr[3]/td[11]/button[@class='btn btn-link']");
+
+    By delete = By.cssSelector("tr:nth-child(3) td:nth-child(11) button:nth-child(1) i:nth-child(1)");
 
     By ok  = By. xpath("//button[@ng-click='close(btn.result)'][2]");
 
