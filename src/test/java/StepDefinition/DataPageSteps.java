@@ -25,7 +25,14 @@ public class DataPageSteps {
     }
 
     @When("^User inserts the record (.+),(.+),(.+),(.+),(.+),(.+),(.+),(.+)$")
-    public void user_enters_the_details(String firstname, String lastname, String username, String password, String customer, String role, String email, String CellPhone) throws InterruptedException {
+    public void user_enters_the_details(String firstname,
+                                        String lastname,
+                                        String username,
+                                        String password,
+                                        String customer,
+                                        String role,
+                                        String email,
+                                        String CellPhone) {
 
         DataTablePage dataTablePage = testContextSetup.pageObjectManager.getDataTablePage();
 
@@ -47,8 +54,8 @@ public class DataPageSteps {
 
     }
 
-    @Then("The Record is successfully added to the table")
-    public void the_record_is_successfully_added_to_the_table() throws InterruptedException {
+    @Then("Validate that the Record is successfully added to the table")
+    public void the_record_is_successfully_added_to_the_table() {
         DataTablePage dataTablePage = testContextSetup.pageObjectManager.getDataTablePage();
 
         Assert.assertEquals("Ankur",dataTablePage.getRecord());
@@ -56,7 +63,7 @@ public class DataPageSteps {
     }
 
     @When("User {string} is present in Table")
-    public void user_is_present_on_page(String user) throws InterruptedException {
+    public void user_is_present_on_page(String user){
         DataTablePage dataTablePage = testContextSetup.pageObjectManager.getDataTablePage();
 
         username = dataTablePage.getUsername();
@@ -64,7 +71,7 @@ public class DataPageSteps {
     }
 
     @When("^Delete button is clicked$")
-    public void delete_button_is_clicked() throws InterruptedException {
+    public void delete_button_is_clicked(){
         DataTablePage dataTablePage = testContextSetup.pageObjectManager.getDataTablePage();
 
         if(username.equals("novak")){

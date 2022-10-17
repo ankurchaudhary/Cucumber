@@ -4,7 +4,7 @@ Feature: Insert & Delete record from the Web table
   Scenario Outline: Validate a new record is create into the table
     Given User is on the DataTable Page
     When User inserts the record <FirstName>,<LastName>,<Username>,<Password>,<Customer>,<Role>,<EMail>,<Cell>
-    Then The Record is successfully added to the table
+    Then Validate that the Record is successfully added to the table
 
     Examples:
     |FirstName|LastName|Username|Password|Customer|Role|EMail|Cell|
