@@ -34,13 +34,13 @@ public class DriverSetup {
             if(browser.equalsIgnoreCase("chrome")){
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
-                driver.manage().window().maximize();
+                maximizeWindow();
                 driver.get(properties.getProperty("url"));
             }
             if(browser.equalsIgnoreCase("firefox")){
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
-                driver.manage().window().maximize();
+                maximizeWindow();
                 driver.get(properties.getProperty("url"));
             }
 
@@ -48,6 +48,10 @@ public class DriverSetup {
         }
 
         return driver;
+    }
+
+    public void maximizeWindow(){
+        driver.manage().window().maximize();
     }
 
 }
