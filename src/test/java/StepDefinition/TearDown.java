@@ -5,11 +5,11 @@ import io.cucumber.java.After;
 
 import java.io.IOException;
 
-public class Hooks {
+public class TearDown {
 
     public TestContextSetup testContextSetup;
 
-    public Hooks(TestContextSetup testContextSetup){
+    public TearDown(TestContextSetup testContextSetup){
         this.testContextSetup = testContextSetup;
     }
 
@@ -17,4 +17,5 @@ public class Hooks {
     public void tearDown() throws IOException {
         testContextSetup.driverSetup.getDriver().quit();
     }
+
 }

@@ -15,7 +15,7 @@ public class DataTablePage {
         this.driver = driver;
     }
 
-    By addButton = By.xpath("//button[@type='add']");
+    By addButton = By.cssSelector("thead button[type='add']");
 
     By firstName = By.xpath("//input[@name='FirstName']");
 
@@ -25,7 +25,8 @@ public class DataTablePage {
 
     By password = By.xpath("//input[@name='Password']");
 
-    By customer = By. xpath("//label/input[@value='15']");
+    By customer_1 = By.xpath("//label/input[@value='15']");
+    By customer_2 = By.xpath("//label/input[@value='16']");
 
     By role = By.xpath("//select[@name='RoleId']");
 
@@ -37,7 +38,9 @@ public class DataTablePage {
 
     By record = By.xpath("//tbody/tr[1]/td[1]");
 
-    By delete = By.xpath("//tbody/tr[3]/td[11]/button[@class='btn btn-link']");
+    //By delete = By.xpath("//tbody/tr[3]/td[11]/button[@class='btn btn-link']");
+
+    By delete = By.cssSelector("tr:nth-child(3) td:nth-child(11) button:nth-child(1) i:nth-child(1)");
 
     By ok  = By. xpath("//button[@ng-click='close(btn.result)'][2]");
 
@@ -64,13 +67,30 @@ public class DataTablePage {
         driver.findElement(password).sendKeys(passwordKey);
     }
 
-    public void selectCustomer(){
-        driver.findElement(customer).click();
+    public void selectCustomer(String customerOption){
+
+        if(customerOption.equals("Company AAA")) {
+            driver.findElement(customer_1).click();
+        }
+        if(customerOption.equals("Company BBB")){
+            driver.findElement(customer_2).click();
+        }
     }
 
-    public void selectRole(){
-        Select selectRole = new Select(driver.findElement(role));
-        selectRole.selectByIndex(1);
+    public void selectRole(String roleKey){
+
+        Select selectRole = new Select
+                (driver.findElement(role));
+
+        if(roleKey.equals("Sales Team")){
+            selectRole.selectByIndex(1);
+        }
+        if(roleKey.equals("Customer")){
+            selectRole.selectByIndex(2);
+        }
+        if(roleKey.equals("Admin")){
+            selectRole.selectByIndex(3);
+        }
     }
 
     public void addEmail(String emailKey){
